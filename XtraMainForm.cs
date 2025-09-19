@@ -19,6 +19,11 @@
             { "saat", DateTime.Now.ToShortTimeString() },
             { "tarih", DateTime.Now.ToShortDateString() + " " + DateTime.Now.DayOfWeek}
         };
+        Dictionary<string, string> actList = new Dictionary<string, string>()
+        {
+            { "notepad", "notepad.exe" },
+            { "hesap makinesi", "calc.exe" }
+        };
 
         private void XtraMainForm_Load(object sender, EventArgs e)
         {
@@ -58,6 +63,13 @@
                     return msgList[key];
                 }
             }
+            foreach (var key in actList.Keys)
+            {
+                if (message.ToLower().Contains(key))
+                {
+                    return OpenProgram(actList[key]);
+                }
+            }
             //if (msgList.ContainsKey(message.ToLower()))
             //{
             //    return msgList[message.ToLower()];
@@ -67,6 +79,27 @@
             //    return "Üzgünüm, bunu anlamıyorum.";
             //}
             return "Üzgünüm, bunu anlamıyorum.";
+        }
+        private void txtUserMsg_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // Enter tuşunun yeni satır eklemesini engelle
+                btnSendMsg.PerformClick(); // Gönder butonuna tıklama işlemini tetikle
+            }
+        }
+        private string OpenProgram(string programPath)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(programPath);
+                return "Program açıldı: " + programPath;
+            }
+            catch (Exception ex)
+            {
+                AppendMessage("ChatBot: Program açılamadı. Hata: " + ex.Message, System.Drawing.Color.Red);
+                return "Program açılamadı.";
+            }
         }
     }
 }
