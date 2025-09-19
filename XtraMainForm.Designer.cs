@@ -83,6 +83,7 @@
             txtUserMsg.Size = new Size(199, 52);
             txtUserMsg.StyleController = layoutControl1;
             txtUserMsg.TabIndex = 4;
+            txtUserMsg.KeyDown += txtUserMsg_KeyDown;
             // 
             // Root
             // 
