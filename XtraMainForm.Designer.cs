@@ -54,7 +54,7 @@
             layoutControl1.Location = new Point(0, 0);
             layoutControl1.Name = "layoutControl1";
             layoutControl1.Root = Root;
-            layoutControl1.Size = new Size(348, 330);
+            layoutControl1.Size = new Size(387, 475);
             layoutControl1.TabIndex = 0;
             layoutControl1.Text = "layoutControl1";
             // 
@@ -62,15 +62,15 @@
             // 
             rchChat.Location = new Point(12, 12);
             rchChat.Name = "rchChat";
-            rchChat.Size = new Size(324, 250);
+            rchChat.Size = new Size(363, 395);
             rchChat.TabIndex = 6;
             rchChat.Text = "";
             // 
             // btnSendMsg
             // 
-            btnSendMsg.Location = new Point(262, 266);
+            btnSendMsg.Location = new Point(292, 411);
             btnSendMsg.Name = "btnSendMsg";
-            btnSendMsg.Size = new Size(74, 52);
+            btnSendMsg.Size = new Size(83, 52);
             btnSendMsg.StyleController = layoutControl1;
             btnSendMsg.TabIndex = 5;
             btnSendMsg.Text = "Gönder";
@@ -78,9 +78,9 @@
             // 
             // txtUserMsg
             // 
-            txtUserMsg.Location = new Point(59, 266);
+            txtUserMsg.Location = new Point(59, 411);
             txtUserMsg.Name = "txtUserMsg";
-            txtUserMsg.Size = new Size(199, 52);
+            txtUserMsg.Size = new Size(229, 52);
             txtUserMsg.StyleController = layoutControl1;
             txtUserMsg.TabIndex = 4;
             txtUserMsg.KeyDown += txtUserMsg_KeyDown;
@@ -91,17 +91,17 @@
             Root.GroupBordersVisible = false;
             Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] { layoutControlItem1, layoutControlItem2, layoutControlItem3 });
             Root.Name = "Root";
-            Root.Size = new Size(348, 330);
+            Root.Size = new Size(387, 475);
             Root.TextVisible = false;
             // 
             // layoutControlItem1
             // 
             layoutControlItem1.Control = txtUserMsg;
-            layoutControlItem1.Location = new Point(0, 254);
+            layoutControlItem1.Location = new Point(0, 399);
             layoutControlItem1.MaxSize = new Size(0, 56);
             layoutControlItem1.MinSize = new Size(61, 56);
             layoutControlItem1.Name = "layoutControlItem1";
-            layoutControlItem1.Size = new Size(250, 56);
+            layoutControlItem1.Size = new Size(280, 56);
             layoutControlItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             layoutControlItem1.Text = "Mesaj :";
             layoutControlItem1.TextSize = new Size(35, 13);
@@ -109,11 +109,11 @@
             // layoutControlItem2
             // 
             layoutControlItem2.Control = btnSendMsg;
-            layoutControlItem2.Location = new Point(250, 254);
+            layoutControlItem2.Location = new Point(280, 399);
             layoutControlItem2.MaxSize = new Size(0, 56);
             layoutControlItem2.MinSize = new Size(46, 56);
             layoutControlItem2.Name = "layoutControlItem2";
-            layoutControlItem2.Size = new Size(78, 56);
+            layoutControlItem2.Size = new Size(87, 56);
             layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             layoutControlItem2.TextSize = new Size(0, 0);
             layoutControlItem2.TextVisible = false;
@@ -123,7 +123,7 @@
             layoutControlItem3.Control = rchChat;
             layoutControlItem3.Location = new Point(0, 0);
             layoutControlItem3.Name = "layoutControlItem3";
-            layoutControlItem3.Size = new Size(328, 254);
+            layoutControlItem3.Size = new Size(367, 399);
             layoutControlItem3.Text = "Text";
             layoutControlItem3.TextSize = new Size(0, 0);
             layoutControlItem3.TextVisible = false;
@@ -133,7 +133,7 @@
             Appearance.Options.UseFont = true;
             AutoScaleDimensions = new SizeF(7F, 16F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(348, 330);
+            ClientSize = new Size(387, 475);
             Controls.Add(layoutControl1);
             Font = new Font("Tahoma", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 162);
             Margin = new Padding(4);
