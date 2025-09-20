@@ -13,9 +13,12 @@ namespace WinFormsApp1
         public XtraMainForm()
         {
             InitializeComponent();
+            _speechToText = new SpeechToText(OnBotActivated);
         }
 
         bool isGptModel = false;
+        private SpeechToText _speechToText;
+
 
         Dictionary<string, string> msgList = new Dictionary<string, string>()
         {
@@ -88,6 +91,9 @@ namespace WinFormsApp1
             rchChat.SelectionColor = System.Drawing.Color.Green;
             rchChat.ReadOnly = true;
             rchChat.AppendText("ChatBot: Merhaba! Size nasıl yardımcı olabilirim?\n");
+
+            _speechToText.InitializeVosk();
+            _speechToText.StartRecording();
         }
 
         private async void btnSendMsg_Click(object sender, EventArgs e)
@@ -258,6 +264,16 @@ namespace WinFormsApp1
             }
 
             return null;
+        }
+        private void OnBotActivated(string response)
+        {
+            if (InvokeRequired)
+            {
+                this.Invoke(new Action(() => OnBotActivated(response)));
+                return;
+            }
+
+            AppendMessage("Asistan: " + response, System.Drawing.Color.Orange);
         }
     }
 }
